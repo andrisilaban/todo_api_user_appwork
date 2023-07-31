@@ -1,16 +1,9 @@
 # todo_api_user_appwork
 
-A new Flutter project.
+Todo App Using Provider State Management And Dio
 
-## Getting Started
+# outputs
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![create](https://github.com/andrisilaban/todo_api_user_appwork/assets/37357139/726f5ed4-3e26-47a1-98ef-076852456b4e)
+![update](https://github.com/andrisilaban/todo_api_user_appwork/assets/37357139/6e760578-6d20-4236-930b-339277ee8e0a)
+![delete](https://github.com/andrisilaban/todo_api_user_appwork/assets/37357139/6cc3d981-4d9c-4f2e-a398-5cf92afa1728)
