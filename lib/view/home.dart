@@ -68,6 +68,18 @@ class _HomeState extends State<Home> {
     return regExp.hasMatch(email);
   }
 
+  void onTap(BuildContext context, dynamic userList) {
+    idSelected = userList.id.toString();
+    name = userList.name;
+    email = userList.email;
+    context.read<UserProvider>().textUser = UserModel(
+      name: name,
+      email: email,
+    );
+
+    context.read<UserProvider>().setEnabledButton();
+  }
+
   @override
   void initState() {
     super.initState();
@@ -110,7 +122,9 @@ class _HomeState extends State<Home> {
                 onChanged: (value) {
                   email = value;
                 },
-                decoration: const InputDecoration(hintText: 'email'),
+                decoration: const InputDecoration(
+                  hintText: 'email',
+                ),
               ),
               Row(
                 children: [
@@ -139,10 +153,11 @@ class _HomeState extends State<Home> {
                           context.watch<UserProvider>().enableButtonUpdate
                               ? () {
                                   insertUpdateUser(
-                                      context: context,
-                                      name: name,
-                                      email: email,
-                                      idSelected: idSelected);
+                                    context: context,
+                                    name: name,
+                                    email: email,
+                                    idSelected: idSelected,
+                                  );
                                 }
                               : null,
                       child: const Text('UPDATE'),
@@ -180,14 +195,7 @@ class _HomeState extends State<Home> {
                     return Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: InkWell(
-                        onTap: () {
-                          idSelected = userList.id.toString();
-                          name = userList.name;
-                          email = userList.email;
-                          context.read<UserProvider>().textUser = UserModel(
-                              name: userList.name, email: userList.email);
-                          context.read<UserProvider>().setEnabledButton();
-                        },
+                        onTap: () => onTap(context, userList),
                         child: Container(
                           decoration: BoxDecoration(
                             color: idSelected == userList.id.toString()
