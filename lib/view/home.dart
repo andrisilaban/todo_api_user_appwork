@@ -46,6 +46,7 @@ class _HomeState extends State<Home> {
   void deleteUser(BuildContext context, String idSelected) {
     context.read<UserProvider>().deleteUser(idUser: idSelected);
     reset();
+    showSnackBar(context, 'Delete Success');
   }
 
   void reset() {
